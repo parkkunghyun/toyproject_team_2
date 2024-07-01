@@ -1,4 +1,4 @@
-## toyproject_team_1(혜준, 한음)
+## toyproject_team_2(혜준, 한음)
 
 간단한 게시판 구현하기
 
