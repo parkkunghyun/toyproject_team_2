@@ -1,7 +1,8 @@
 package com.twoteam.toyproject.controller;
 
+import com.twoteam.toyproject.Service.MemberService;
 import com.twoteam.toyproject.dto.MemberDTO;
-import com.twoteam.toyproject.service.MemberService;
+import com.twoteam.toyproject.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
