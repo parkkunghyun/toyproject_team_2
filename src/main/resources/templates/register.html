@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MBTI 게시판 회원가입 페이지</title>
+    <meta name="keyword" content="MBTI 게시판">
+    <meta name="description" content="귀여운 MBTI 게시판">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <img src="img/mbti.jpg" alt="MBTI 이미지" class="mbti-image">
+    <h1>회원가입</h1>
+    <form id="registerForm" action="/register" method="post">
+        <br>
+        <input type="text" id="memberName" name="memberName" placeholder="이름"><br>
+        <input type="email" id="memberEmail" name="memberEmail" placeholder="이메일"><br>
+        <input type="password" id="memberPW" name="memberPW" placeholder="비밀번호"><br>
+        <input type="password" id="memberPWConfirm" name="memberPWConfirm" placeholder="비밀번호 확인"><br>
+        <div class="btn_register_wrap">
+            <button type="submit" class="btn_register" id="reg.register">
+                <span class="btn_text">회원가입</span>
+            </button>
+        </div>
+        <div id="errorMessage" style="color: red;"></div>
+    </form>
+    <a href="/">로그인</a>
+</div>
+<br>
+<script>
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // 기본 제출 동작 방지
+
+        // 입력값 가져오기
+        var memberPW = document.getElementById("memberPW").value;
+        var memberPWConfirm = document.getElementById("memberPWConfirm").value;
+
+        // 비밀번호 확인
+        if (memberPW !== memberPWConfirm) {
+            document.getElementById("errorMessage").innerText = "비밀번호가 일치하지 않습니다.";
+            return; // 일치하지 않으면 폼 제출 중지
+        }
+
+        // 일치하면 폼 제출
+        this.submit();
+    });
+</script>
+</body>
+</html>
