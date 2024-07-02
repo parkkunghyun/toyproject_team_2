@@ -18,6 +18,4 @@ public class MemberDTO {
 
     @Column(length = 255)
     private String memberPW;
-
-    // 필요 없는 getMemberPWConfirm() 메소드 제거
 }
