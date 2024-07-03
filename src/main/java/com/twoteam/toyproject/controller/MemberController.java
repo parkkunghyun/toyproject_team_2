@@ -40,5 +40,22 @@ public class MemberController {
             return "register"; // 회원가입 페이지에 오류 메시지를 포함하여 다시 이동
         }
     }
+    @PostMapping("/login")
+    public String login(@RequestParam String memberEmail, @RequestParam String memberPW, Model model) {
+        Member member = memberService.findMemberByEmailAndPassword(memberEmail, memberPW);
+
+        if (member != null) {
+            // 로그인 성공
+            return "redirect:/board"; // 대시보드 페이지로 리다이렉트
+        } else {
+            // 로그인 실패
+            model.addAttribute("errorMessage", "이메일 또는 비밀번호가 잘못되었습니다.");
+            return "index"; // 로그인 페이지에 오류 메시지를 포함하여 다시 이동
+        }
+    }
+    @GetMapping("/board")
+    public String board() {
+        return "board/board"; // 로그인 성공 후 대시보드 페이지로 이동
+    }
 
 }

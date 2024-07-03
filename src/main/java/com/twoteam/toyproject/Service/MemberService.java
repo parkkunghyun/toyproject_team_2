@@ -31,5 +31,8 @@ public class MemberService {
         memberRepository.save(member);
     }
     // 이메일과 비밀번호로 회원 조회하는 메서드 추가
-
+    // 이메일과 비밀번호로 회원 조회하는 메서드
+    public Member findMemberByEmailAndPassword(String memberEmail, String memberPW) {
+        return memberRepository.findByMemberEmailAndMemberPW(memberEmail, memberPW);
+    }
 }
