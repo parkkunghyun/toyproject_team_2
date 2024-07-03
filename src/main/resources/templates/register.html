@@ -20,6 +20,19 @@
         <input type="email" id="memberEmail" name="memberEmail" placeholder="이메일"><br>
         <input type="password" id="memberPW" name="memberPW" placeholder="비밀번호"><br>
         <input type="password" id="memberPWConfirm" name="memberPWConfirm" placeholder="비밀번호 확인"><br>
+
+        <div class="mbti-selection">
+            <label for="memberMBTI">MBTI:</label>
+            <div class="mbti-option">
+                <label for="mbtiE" class="mbti-label">E(외향형)</label>
+                <input type="radio" id="mbtiE" name="memberMBTI" value="E">
+            </div>
+            <div class="mbti-option">
+                <label for="mbtiI" class="mbti-label">I(내향형)</label>
+                <input type="radio" id="mbtiI" name="memberMBTI" value="I">
+            </div>
+        </div>
+
         <div class="btn_register_wrap">
             <button type="submit" class="btn_register" id="reg.register">
                 <span class="btn_text">회원가입</span>

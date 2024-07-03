@@ -18,10 +18,10 @@ public class MemberService {
                 null,
                 memberDTO.getMemberEmail(),
                 memberDTO.getMemberPW(),
-                memberDTO.getMemberName()
+                memberDTO.getMemberName(),
+                memberDTO.getMemberMBTI()
         );
     }
-
     // 회원가입 로직 구현
     public void registerMember(MemberDTO memberDTO) {
         // DTO를 엔티티로 변환
@@ -30,4 +30,6 @@ public class MemberService {
         // 저장 로직 (Repository 사용)
         memberRepository.save(member);
     }
+    // 이메일과 비밀번호로 회원 조회하는 메서드 추가
+
 }

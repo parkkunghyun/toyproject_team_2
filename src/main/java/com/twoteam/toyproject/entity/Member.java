@@ -1,6 +1,5 @@
 package com.twoteam.toyproject.entity;
 
-import com.twoteam.toyproject.dto.MemberDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,4 +22,7 @@ public class Member {
 
     @Column(nullable = false)
     private String memberName;
+
+    @Column(nullable = false, length = 1)
+    private String memberMBTI; // 추가된 필드
 }

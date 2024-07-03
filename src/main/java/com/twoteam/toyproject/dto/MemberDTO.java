@@ -18,4 +18,7 @@ public class MemberDTO {
 
     @Column(length = 255)
     private String memberPW;
+
+    @Column(length = 1) // "E" 또는 "I"만 입력되므로 길이 1로 설정
+    private String memberMBTI;
 }

@@ -3,6 +3,7 @@ package com.twoteam.toyproject.controller;
 import com.twoteam.toyproject.Service.MemberService;
 import com.twoteam.toyproject.dto.MemberDTO;
 import com.twoteam.toyproject.Service.MemberService;
+import com.twoteam.toyproject.entity.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,4 +40,5 @@ public class MemberController {
             return "register"; // 회원가입 페이지에 오류 메시지를 포함하여 다시 이동
         }
     }
+
 }
