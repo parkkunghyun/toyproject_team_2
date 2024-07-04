@@ -3,6 +3,8 @@ server:
   servlet:
     encoding:
       force: true
+    session:
+      timeout: 30m
 
 # database 연동 설정
 spring:
@@ -28,10 +30,9 @@ spring:
 #          starttls:
 #            enable: true
 
-  # spring data jpa 설정
-  # spring data jpa 설정
-  jpa:
-    open-in-view: true
-    show-sql: true
-    hibernate:
-      ddl-auto: update
+# spring data jpa 설정
+jpa:
+  open-in-view: true
+  show-sql: true
+  hibernate:
+    ddl-auto: update

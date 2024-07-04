@@ -1,4 +1,4 @@
-package com.twoteam.toyproject.Service;
+package com.twoteam.toyproject.service;
 
 import com.twoteam.toyproject.dto.MemberDTO;
 import com.twoteam.toyproject.entity.Member;

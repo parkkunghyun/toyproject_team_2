@@ -15,7 +15,7 @@
 <!-- navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid" style="background-color: #343a40;">
-        <a class="navbar-brand" href="../timer"><img src="img/mbtiPont.jpg" alt="MBTI 이미지" class="sunset-image" width = "70px">
+        <a class="navbar-brand" href="../timer"><img src="/img/mbtiPont.jpg" alt="error" class="sunset-image" width = "70px">
             <span style="font-size: 0.8em; vertical-align: middle;"></span></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,5 +56,13 @@
                 aria-label="Close"></button>
     </div>
 {{/msg}}
+<div class="d-flex justify-content-between align-items-center bg-light p-3">
+    <div>
+        <p class="m-0">환영합니다, {{memberName}}님!</p>
+    </div>
+    <div>
+        <a href="/logout" class="btn btn-outline-primary">로그아웃</a>
+    </div>
+</div>
 </body>
 </html>

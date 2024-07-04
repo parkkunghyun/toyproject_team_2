@@ -1,15 +1,13 @@
 package com.twoteam.toyproject.controller;
 
-import com.twoteam.toyproject.Service.MemberService;
 import com.twoteam.toyproject.dto.MemberDTO;
-import com.twoteam.toyproject.Service.MemberService;
 import com.twoteam.toyproject.entity.Member;
+import com.twoteam.toyproject.service.MemberService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MemberController {
@@ -40,12 +38,14 @@ public class MemberController {
             return "register"; // 회원가입 페이지에 오류 메시지를 포함하여 다시 이동
         }
     }
+
     @PostMapping("/login")
-    public String login(@RequestParam String memberEmail, @RequestParam String memberPW, Model model) {
+    public String login(@RequestParam String memberEmail, @RequestParam String memberPW, Model model, HttpSession session) {
         Member member = memberService.findMemberByEmailAndPassword(memberEmail, memberPW);
 
         if (member != null) {
-            // 로그인 성공
+            // 로그인 성공 - 세션에 사용자 정보 저장
+            session.setAttribute("loggedInUser", member);
             return "redirect:/board"; // 대시보드 페이지로 리다이렉트
         } else {
             // 로그인 실패
@@ -53,9 +53,11 @@ public class MemberController {
             return "index"; // 로그인 페이지에 오류 메시지를 포함하여 다시 이동
         }
     }
-    @GetMapping("/board")
-    public String board() {
-        return "board/board"; // 로그인 성공 후 대시보드 페이지로 이동
-    }
 
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        // 세션에서 사용자 정보 제거
+        session.invalidate();
+        return "redirect:/"; // 로그아웃 후 로그인 페이지로 리다이렉트
+    }
 }
